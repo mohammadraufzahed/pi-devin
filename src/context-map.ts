@@ -1,4 +1,10 @@
-import type { Context, Message, Tool } from "@earendil-works/pi-ai";
+import {
+  getCurrentSystemPrompt,
+  getCurrentTools,
+  type Message,
+  type Tool,
+  type TranscriptContext,
+} from "@earendil-works/pi-ai";
 import { unpackThinkingSignature, type ChatThinking } from "./thinking.js";
 
 export interface ContentPart {
@@ -44,7 +50,7 @@ function userContent(content: Message["content"]): string | ContentPart[] {
   return parts;
 }
 
-export function mapContextToChat(context: Context): MappedChat {
+export function mapContextToChat(context: TranscriptContext): MappedChat {
   const messages: ChatHistoryItem[] = [];
 
   for (const message of context.messages) {
@@ -103,11 +109,16 @@ export function mapContextToChat(context: Context): MappedChat {
     }
   }
 
-  const tools: ToolDef[] = (context.tools ?? []).map((tool: Tool) => ({
+  // Pi folds Context.systemPrompt/Context.tools into transcript system messages
+  // (toolsAdded/toolsRemoved deltas) before a provider sees them, so replay the
+  // transcript instead of reading context.systemPrompt/context.tools directly.
+  const tools: ToolDef[] = getCurrentTools(context.messages).map((tool: Tool) => ({
     name: tool.name,
     description: tool.description,
     parameters: tool.parameters,
   }));
 
-  return { systemPrompt: context.systemPrompt || undefined, messages, tools };
+  const systemPrompt = getCurrentSystemPrompt(context.messages) || undefined;
+
+  return { systemPrompt, messages, tools };
 }
