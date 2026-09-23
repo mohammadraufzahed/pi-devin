@@ -20,9 +20,9 @@ This model is only in Devin Local.
 
 ## 环境要求
 
-- Pi Coding Agent 0.80+
+- Pi Coding Agent 0.86+
 - 已登录的 [Devin CLI](https://docs.devin.ai/cli)（`devin auth status`），或已登录的 Devin Desktop
-- Node 18+
+- Node 22.19+
 
 CLI 可执行文件的查找顺序：
 

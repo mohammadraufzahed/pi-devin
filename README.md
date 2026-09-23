@@ -20,9 +20,9 @@ Those models are available through the local Devin CLI. This package uses that C
 
 ## Requirements
 
-- Pi Coding Agent 0.80+
+- Pi Coding Agent 0.86+
 - A signed-in [Devin CLI](https://docs.devin.ai/cli) (`devin auth status`), or a signed-in Devin Desktop
-- Node 18+
+- Node 22.19+
 
 The CLI binary is resolved in this order:
 
