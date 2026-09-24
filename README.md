@@ -42,7 +42,7 @@ pi install npm:pi-devin-local
 From git:
 
 ```bash
-pi install git:github.com/mizorewww/pi-devin
+pi install git:github.com/mohammadraufzahed/pi-devin
 ```
 
 Local checkout:
@@ -121,7 +121,7 @@ Everything upstream does, plus:
 ## Publish
 
 ```bash
-bun run typecheck
+npm run typecheck
 npm publish --access public
 ```
 

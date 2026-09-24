@@ -20,11 +20,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mizorewww/pi-devin.git"
+    "url": "git+https://github.com/mohammadraufzahed/pi-devin.git"
   },
-  "homepage": "https://github.com/mizorewww/pi-devin#readme",
+  "homepage": "https://github.com/mohammadraufzahed/pi-devin#readme",
   "bugs": {
-    "url": "https://github.com/mizorewww/pi-devin/issues"
+    "url": "https://github.com/mohammadraufzahed/pi-devin/issues"
   },
   "publishConfig": {
     "access": "public"

@@ -42,7 +42,7 @@ pi install npm:pi-devin-local
 从 git：
 
 ```bash
-pi install git:github.com/mizorewww/pi-devin
+pi install git:github.com/mohammadraufzahed/pi-devin
 ```
 
 本地仓库：
@@ -104,7 +104,7 @@ pi install ~/Developers/pi-devin
 ## 发布
 
 ```bash
-bun run typecheck
+npm run typecheck
 npm publish --access public
 ```
 
