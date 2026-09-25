@@ -276,7 +276,7 @@ function sessionIds(apiKey: string, host: string) {
   return ids;
 }
 
-async function* streamChatEvents(args: {
+export async function* streamChatEvents(args: {
   apiKey: string;
   host: string;
   modelUid: string;
