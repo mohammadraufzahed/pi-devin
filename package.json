@@ -44,6 +44,8 @@
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
+    "pretest": "tsc -p tsconfig.json --noEmit false --outDir .test-build",
+    "test": "node --test \".test-build/tests/*.test.js\"",
     "prepublishOnly": "tsc --noEmit"
   },
   "peerDependencies": {
